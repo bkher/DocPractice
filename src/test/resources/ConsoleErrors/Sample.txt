@@ -1,0 +1,3 @@
+Wed Dec 05 15:41:03 IST 2018 WARNING deprecation - HTML Imports is deprecated and will be removed in M73, around March 2019. Please use ES modules instead. See https://www.chromestatus.com/features/5144752345317376 for more details.
+Wed Dec 05 15:41:03 IST 2018 WARNING http://docitt-naf.lender.qa.lendfoundry.com/components/vendor.html 0 document.registerElement is deprecated and will be removed in M73, around March 2019. Please use window.customElements.define instead. See https://www.chromestatus.com/features/4642138092470272 for more details.
+

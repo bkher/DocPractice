@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<suite name="Docitt NAF Tests Execution Report"
+	skipfailedinvocationCounts="false" parallel="false"
+	preserve-order="true" thread-count="100">
+
+	<parameter name="config-file"
+		value="src/test/resources/portal.properties" />
+
+	<test verbose="5" name="NAF Portal Tests" preserve-order="true"
+		parallel="false" thread-count="100" group-by-instances="false">
+
+		<parameter name="browser" value="Chrome" />
+
+		<groups>
+
+			<run>
+
+				<include name="PurchaseTests" />
+
+				<include name="RefinanceTests" />
+
+
+			</run>
+
+		</groups>
+
+		<classes>
+
+			<class
+				name="net.sigmainfo.lf.automation.portal.tests.PurchaseSanityTests" />
+
+			<class
+				name="net.sigmainfo.lf.automation.portal.tests.RefinanceSanityTests" />
+
+		</classes>
+
+	</test>
+
+</suite>

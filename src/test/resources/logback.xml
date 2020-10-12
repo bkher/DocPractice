@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+    <appender name="appenderConsole" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%p] [%d{yyyy-MM-dd @ HH:mm:ss:SSS}] [%t|%c{1}] %m%n</pattern>
+        </encoder>
+    </appender>
+    
+    
+    <appender name="appenderAppFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- The active file to log to -->
+		<File>logs/OC-automation.log</File>
+        <Append>true</Append>
+        <!-- Set the maximum size that the output file is allowed to reach before being rolled over to backup files -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <maxIndex>5</maxIndex>
+            <FileNamePattern>logs/OC-automation.log.%i</FileNamePattern>
+        </rollingPolicy>
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>5MB</MaxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>[%p] [%d{yyyy-MM-dd @ HH:mm:ss:SSS}] [%t|%c{1}] %m%n</pattern>
+            <!--			<pattern>[%p] [%d{yyyy-MM-dd @ HH:mm:ss:SSS}] [%t|%c{1}] %m%n</pattern> -->
+        </encoder>
+</appender>
+
+    <logger name="org.hibernate" level="WARN">
+        <appender-ref ref="appenderAppFile" />
+    </logger>
+
+    <logger name="org.springframework" level="WARN">
+    </logger>
+
+    <root level ="INFO">
+        <appender-ref ref="appenderConsole" />
+        <appender-ref ref="appenderAppFile" />
+    </root></configuration>
